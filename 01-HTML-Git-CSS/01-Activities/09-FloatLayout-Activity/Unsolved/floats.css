@@ -21,7 +21,8 @@ section {
 }
 
 #left {
-  padding: 20px;
+  width: 400px;
+   padding: 20px;
   margin-bottom: 20px;
   float: left;
   background-color: #30948D;
@@ -34,6 +35,7 @@ section {
 }
 
 #right {
+  width: 400px;
   padding: 20px;
   margin-bottom: 20px;
   float: right;
@@ -41,9 +43,10 @@ section {
 }
 
 #full {
+  height: 250px;
   padding: 20px;
   margin-bottom: 20px;
-  background-color: #a6b747;
+  background-color: #394549;
 }
 
 #division {
@@ -53,9 +56,12 @@ section {
 }
 
 aside {
+  height: 200px;
+  width: 400px;
+  float: left;
   padding: 20px;
   margin-bottom: 20px;
-  background-color: #394549;
+  background-color: #a6b747;
 }
 
 footer {
