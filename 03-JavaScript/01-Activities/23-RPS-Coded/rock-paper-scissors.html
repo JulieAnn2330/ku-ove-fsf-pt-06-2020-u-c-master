@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Random Numbers</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+   
+    var computerChoices=["Rock", "Paper", "Scissors"];
+
+    var wins = 0;
+      var losses = 0;
+      var ties = 0;
+
+           
+    for(var i = 0; i < 10; i++) {
+    var computerGuess=computerChoices[Math.floor(Math.random()*computerChoices.length)];
+    var userGuess=prompt ("Choose Rock, Paper or Scissors");
+
+    alert ("The computer chose" + computerGuess);
+
+    if((userGuess === "Rock" && computerGuess === "Scissors") ||
+    (userGuess === "Scissors" && computerGuess === "Paper") ||
+    (userGuess === "Paper" && computerGuess === "Rock")) {
+        wins ++;
+        alert ("You've won" + wins + "time(s)!");
+
+     } 
+     
+     else if (userGuess === computerGuess) {
+            ties++;
+        }
+        else {
+            losses++;
+            alert ("You're lost" + losses + " time(s)");
+        }
+    }
+
+
+   
+    </script>
+  </body>
+  </html>
