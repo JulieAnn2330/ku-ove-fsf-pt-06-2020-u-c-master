@@ -1,3 +1,16 @@
+<!-- 1. Create initial HTML and external libraries-->
+<!-- 2. Add jQuery for functionality  -->
+<!-- 3. Assign classes and ids -->
+<!-- 4. Add event listeners to our elements that will tie in with our jQuery -->
+<!-- 5. Assign onclicks -->
+
+
+<!-- 1. Click button to grow, click to shrink -->
+<!-- 2. Click buttons to move -->
+<!-- 3. Click buttons to hide -->
+<!-- 4. Click to control music -->
+<!-- 5. Buttons to reset animation-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,6 +79,33 @@
           </div>
         </div>
 
+            <!-- Controls (Superpower Teleportation) -->
+            <div id="transportControls" class="card">
+              <h4 class="card-header">Superpowers - Teleportation!</h4>
+              <div class="card-body">
+                <div class="text-center">
+                  <button class="btn btn-dark btn-lg teleport-button">
+                    <span class="fa fa-eye"></span> Teleport</button>
+                  <button class="btn btn-info btn-lg home-button">
+                    <span class="fa fa-eye-slash"></span> Home</button>
+                </div>
+              </div>
+            </div>
+
+               <!-- Controls (Superpower Form of Fire) -->
+               <div id="transportControls" class="card">
+                <h4 class="card-header">Superpowers - Form Fire!</h4>
+                <div class="card-body">
+                  <div class="text-center">
+                    <button class="btn btn-dark btn-lg fire-button">
+                      <span class="fa fa-eye"></span> Fire</button>
+                    <button class="btn btn-info btn-lg home-button">
+                      <span class="fa fa-eye-slash"></span> Home</button>
+                  </div>
+                </div>
+              </div>
+
+            
         <!-- Controls (Superpower Move Controls) -->
         <div id="moveControls" class="card">
           <h4 class="card-header">Move Controls</h4>
@@ -132,6 +172,21 @@
     });
     $(".invis-button").on("click", function() {
       captainPlanet.animate({ opacity: "0.05" });
+    });
+
+      // Teleportation Buttons
+      $(".teleport-button").on("click", function() {
+      captainPlanet.animate({ left: "+=700px" }, "fast");
+    });
+    $(".home-button").on("click", function() {
+      captainPlanet.animate({ top: "50px", left: "80px" }, "fast");
+    });
+
+          // Fire Buttons
+          $(".fire-button").on("click", function() {
+      captainPlanet.animate({img src="https://icons.iconarchive.com/icons/google/noto-emoji-travel-places/256/42697-fire-icon.png" alt="" style="position:absolute; top:50px; left: 80px; z-index: -20; height: 300px"});
+    $(".home-button").on("click", function() {
+      captainPlanet.animate({ top: "50px", left: "80px" }, "fast");
     });
 
     // Move Buttons
