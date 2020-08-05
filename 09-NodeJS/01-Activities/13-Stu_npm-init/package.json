@@ -1,0 +1,22 @@
+{
+  "name": "13-stu_npm-init",
+  "version": "1.0.0",
+  "description": "13-stu_npm-init",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://julieann2330.git"
+  },
+  "keywords": [
+    "practice",
+    "npm"
+  ],
+  "author": "julie.ann.schaub",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
+}
