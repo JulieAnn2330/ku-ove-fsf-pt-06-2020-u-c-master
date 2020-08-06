@@ -1,4 +1,5 @@
 var inquirer = require("inquirer");
+var fs = require('fs');
 
 inquirer.prompt([
     {
@@ -8,7 +9,7 @@ inquirer.prompt([
    },
     {
         type: 'checkbox',
-        message: 'select languages',
+        message: 'What languages do you know?',
         name: 'stack',
         choices: [
           'HTML',
@@ -18,8 +19,8 @@ inquirer.prompt([
     ]},
     {
         type: 'list',        
-        message: 'Select communicaton method',
-        name: 'communication',
+        message: 'What is your preferred method of communication?',
+        name: 'contact',
         choices: [
          'phone',
          'email',
@@ -31,7 +32,7 @@ inquirer.prompt([
       console.log(data);
 var filename = data.name.toLowerCase().split(' ').join('') + '.json';
 
-fs .writeFile(filename, JSON.stringify(data, null, '\t'), function(err) {
+fs.writeFile(filename, JSON.stringify(data, null, '\t'), function(err) {
     if (err) {
         return console.log(err);
     }
