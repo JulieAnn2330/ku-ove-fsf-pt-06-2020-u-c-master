@@ -1,5 +1,7 @@
 {
 	"name": "Julie",
-	"stack": [],
+	"stack": [
+		"HTML"
+	],
 	"contact": "phone"
 }

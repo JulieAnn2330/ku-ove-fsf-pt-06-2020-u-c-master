@@ -30,7 +30,7 @@ inquirer.prompt([
 
   .then(function(data) {
       console.log(data);
-var filename = data.name.toLowerCase().split(' ').join('') + '.json';
+var filename = data.name
 
 fs.writeFile(filename, JSON.stringify(data, null, '\t'), function(err) {
     if (err) {
