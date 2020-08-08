@@ -10,3 +10,20 @@ inquirer
   .then(function({ username }) {
     const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
   });
+
+
+  axios.get('queryUrl').then(function(res) {
+    const repoNames = res.data.map(function(rep) {
+      return repo.name;
+    });
+
+    const repoNamesStr = repoNames.join('\n');
+
+   fs.writeFile('repos.txt', repoNamesStr, function(err) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log(`Saved ${repoNames.length} repos`);
+});
+  });
+  

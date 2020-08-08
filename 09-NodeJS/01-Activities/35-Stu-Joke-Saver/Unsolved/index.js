@@ -9,6 +9,15 @@ const config = { headers: { accept: "application/json" } };
 
 axios.get("https://icanhazdadjoke.com/", config)
   .then(function(res) {
+    const { joke } = res.data
 
-    console.log(res.data);
+    appendFileAsync('jokes.txt', joke + '\n').then(function() {
+      readFileAsync('jokes.txt', "utf8").then(function(data) {
+        console.log("saved dad jokes:")
+        console.log(data)
+       })
+      })
   });
+
+
+  
