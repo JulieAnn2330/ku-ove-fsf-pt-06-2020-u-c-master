@@ -1,0 +1,22 @@
+{
+  "name": "11-quotesapp",
+  "version": "1.0.0",
+  "description": "quotes app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "JulieAnn2330"
+  },
+  "author": "Julie Ann Schaub",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4"
+  }
+}

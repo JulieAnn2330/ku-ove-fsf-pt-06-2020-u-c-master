@@ -1,0 +1,95 @@
+<h1>Movie Planner</h1>
+
+<ul>
+  {{#each movies}}
+  <li>
+    <p>
+      {{this.id}}. {{this.movies}}
+
+      <button data-moviesid="{{this.id}}" class="delmovies">Delete Movie!</button>
+    </p>
+  </li>
+  {{/each}}
+</ul>
+
+<h2>Enter a Movie</h2>
+<form id="entermovies" class="button-size">
+  <textarea type="text" name="movies"></textarea>
+  <button type="submit">Save Movie!</button>
+</form>
+
+<h2>Update a Movie</h2>
+<form id="updatemovies" class="button-size">
+  <select name="id">
+		{{#each movies}}
+			<option value="{{this.id}}">{{this.movies}}</option>
+		{{/each}}
+	</select>
+  <textarea type="text" name="movies" placeholder="Movie Name"></textarea>
+  <button type="submit">Update Movie!</button>
+</form>
+
+<script type="text/javascript">
+  $(".delmovies").on("click", function(event) {
+    // Get the ID from the button.
+    // This is shorthand for $(this).attr("data-moviesid")
+    var id = $(this).data("moviesid");
+
+    // Send the DELETE request.
+    $.ajax("/api/movies/" + id, {
+      type: "DELETE"
+    }).then(
+      function() {
+        console.log("deleted id ", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+  $("#entermovies").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    // [name=movie] will find an element with a "name" attribute equal to the string "movie"
+    var newMovies = {
+      movies: $("#entermovies [name=movies]").val().trim()
+    };
+
+    // Send the POST request.
+    $.ajax("/api/movies", {
+      type: "POST",
+      data: newMovies
+    }).then(
+      function() {
+        console.log("created new movie");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+  $("#updatemovies").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    // Get the ID by finding an element with a "name" attribute equal to the string "id"
+    var id = $("[name=id]").val().trim();
+
+    var updatedMovies = {
+      movies: $("#updatemovies [name=movies]").val().trim()
+    };
+
+    // Send the PUT request.
+    $.ajax("/api/movies/" + id, {
+      type: "PUT",
+      data: updatedMovies
+    }).then(
+      function() {
+        console.log("updated id ", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+</script>
