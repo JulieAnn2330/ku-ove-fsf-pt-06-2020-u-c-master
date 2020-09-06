@@ -1,0 +1,15 @@
+{
+  "name": "12-top5000schema",
+  "version": "1.0.0",
+  "description": "Top 5000 Songs DB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "JulieAnn2330"
+  },
+  "author": "Julie Ann Schaub",
+  "license": "ISC"
+}
