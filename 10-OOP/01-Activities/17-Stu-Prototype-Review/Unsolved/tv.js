@@ -5,6 +5,27 @@ const fs = require("fs");
 const TV = function() {};
 
 // Find a tv show actor
+TV.prototype.findActor = function(actor) {
+  const URL = "http://api.tvmaze.com/search/people?q=" + actor;
+
+  axios.get(URL).then(response => {
+    const actorData = [
+      "Actor: " + response.data[0].person.name,
+      "Birthday: " + response.data[0].person.birthday.join(", "),
+      "Gender: " + response.data[0].person.gender,
+      "Country: " + response.data[0].person.country.name,
+      "TV Maze URL: " + response.data[0].person.url,
+      "-".repeat(60)
+    ].join("\n\n");
+
+    fs.appendFile("log.txt", actorData, err => {
+      if (err) throw err;
+
+      console.log(actorData);
+    });
+  });
+};
+
 
 // Find a tv show
 TV.prototype.findShow = function(show) {
