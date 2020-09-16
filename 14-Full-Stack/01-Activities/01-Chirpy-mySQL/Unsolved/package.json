@@ -4,12 +4,19 @@
   "description": "Simple library app built with express.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "",
+  "author": "Julie Schaub",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3",
-    "mysql": "^2.12.0"
+    "app": "^0.1.0",
+    "express": "^4.17.1",
+    "mysql": "^2.12.0",
+    "util": "^0.12.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "JulieAnn2330"
   }
 }

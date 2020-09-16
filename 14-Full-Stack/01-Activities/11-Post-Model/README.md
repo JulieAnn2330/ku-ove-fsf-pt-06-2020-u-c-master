@@ -4,16 +4,16 @@
 
   The goal of this exercise is to create a Post model using Sequelize.
 
-  1) Open the folder slacked out to you, run `npm install`
+  1) Open the folder slacked out to you, run `npm install` -- DONE
 
-  2) Create a new MySQL database and name it `blogger`. Don't create any tables.
+  2) Create a new MySQL database and name it `blogger`. Don't create any tables. -- DONE
 
-  3) Open the `config` folder and update the `config.json` file's `development` object to match your own local MySQL database.
+  3) Open the `config` folder and update the `config.json` file's `development` object to match your own local MySQL database. -- DONE
 
-  4) Go to the `models` folder and open the `post.js` file.
+  4) Go to the `models` folder and open the `post.js` file. -- DONE
 
   5) Create a Sequelize `Post` model here. The model should have a title property of type DataTypes.STRING, a body property of DataTypes.TEXT, and a category property of DataTypes.STRING. 
-  (<https://sequelize.org/master/manual/model-basics.html#data-types>)
+  (<https://sequelize.org/master/manual/model-basics.html#data-types>) -- DONE
 
   6) To check if this worked, run `node server.js` in your terminal. Then open MySQL Workbench to check if a Posts table has been created.
 
@@ -23,10 +23,10 @@
 
   If you complete the activity before time's up, try adding the following:
 
-  1) Flags to the title and body to prevent NULL values from being entered.
+  1) Flags to the title and body to prevent NULL values from being entered. -- DONE
 
-  2) A validation to the title so that it must be between 1 and 160 characters.
+  2) A validation to the title so that it must be between 1 and 160 characters. -- DONE
 
-  3) A validation to the body so that it must be at least 1 character long.
+  3) A validation to the body so that it must be at least 1 character long. -- DONE
 
-  4) A flag to the category so that it has a default value of "Personal" if a value is not supplied.
+  4) A flag to the category so that it has a default value of "Personal" if a value is not supplied. -- DONE

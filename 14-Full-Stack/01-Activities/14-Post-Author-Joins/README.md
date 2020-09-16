@@ -6,11 +6,11 @@
 
   1) Open the folder slacked out to you
 
-  2) Run `npm install`
+  2) Run `npm install` -- DONE
 
-  3) Open the `config` folder and update the `config.json` file's `development` object to match your own local MySQL database.
+  3) Open the `config` folder and update the `config.json` file's `development` object to match your own local MySQL database. -- DONE
 
-  4) Navigate to the `post-api-routes.js` file.
+  4) Navigate to the `post-api-routes.js` file. -- DONE
 
   5) Add the "include" option to the queries specified in the comments. This is a feature called "eager loading". We want to "include" the Author model. Examples can be found here:
   <https://sequelize.org/master/manual/eager-loading.html>
