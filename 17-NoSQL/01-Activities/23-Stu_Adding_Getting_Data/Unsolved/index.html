@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Adding and Getting Data</title>
+  </head>
+
+  <body>
+    <h1>Open Your Developer Tools > Application > IndexedDB</h1>
+    <script>
+      const request = window.indexedDB.open("toDoList", 1);
+      
+      request.onupgradeneeded = event => {
+        const db = event.target.result;
+        const toDoListStore = db.createObjectStore("toDoList", {keyPath: "listID"});
+        // Creates a statusIndex that we can query on.
+        toDoListStore.createIndex("ownerIndex", "owner"); 
+      
+      }
+
+      
+      request.onsuccess = () => {
+        const db = request.result;
+        const transaction = db.transaction(["toDoList"], "readwrite");
+        const toDoListStore = transaction.objectStore("toDoList");
+        const statusIndex = toDoListStore.index("ownerIndex");
+  
+        // Adds data to our objectStore
+        toDoListStore.add({ listID: "1", owner: "Julie" });
+        toDoListStore.add({ listID: "2", owner: "Troy" });
+        toDoListStore.add({ listID: "3", owner: "Patrick" });
+        toDoListStore.add({ listID: "4", owner: "Troy" });
+       
+        // Return an item by keyPath
+        const getRequest = toDoListStore.get("1");
+        getRequest.onsuccess = () => {
+          console.log(getRequest.result);
+        };
+
+        // Return an item by index
+        const getRequestIdx = ownerIndex.getAll("Troy");
+        getRequestIdx.onsuccess = () => {
+          console.log(getRequestIdx.result); 
+        }; 
+      };
+     
+
+    </script>
+  </body>
+</html>
