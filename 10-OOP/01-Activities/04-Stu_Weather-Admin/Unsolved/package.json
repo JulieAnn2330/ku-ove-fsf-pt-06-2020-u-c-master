@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "weather-js": "^2.0.0"
   }
 }
